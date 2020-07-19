@@ -12,19 +12,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.greedygame.R;
 import com.example.greedygame.activity.ImagePreviewMode;
 
-import com.example.greedygame.imageloader.NetworkImageView;
-import com.example.greedygame.imageloader.ReddItImageNetworkImageView;
+import com.example.imageloaderlib.imageloader.NetworkImageView;
+import com.example.imageloaderlib.imageloader.ReddItImageNetworkImageView;
 import com.example.greedygame.model.ChildrenModel;
 import com.example.greedygame.model.ImageDataModel;
 
 import java.util.List;
 
-public class ReddItAdapter extends RecyclerView.Adapter<ReddItAdapter.ViewHolder>{
+public class ReddItAdapter extends RecyclerView.Adapter<ReddItAdapter.ViewHolder> {
 
     private List<ChildrenModel> childrenModels;
     Context context;
 
-    public ReddItAdapter(List<ChildrenModel> childrenModels, Context context){
+    public ReddItAdapter(List<ChildrenModel> childrenModels, Context context) {
         this.childrenModels = childrenModels;
         this.context = context;
     }
@@ -33,22 +33,22 @@ public class ReddItAdapter extends RecyclerView.Adapter<ReddItAdapter.ViewHolder
     @Override
     public ReddItAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.image_item, parent, false);
+        View listItem = layoutInflater.inflate(R.layout.image_item, parent, false);
         return new ViewHolder(listItem);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final ChildrenModel childrenModel = childrenModels.get(position);
-        if(childrenModel == null || childrenModel.getChildrenDataModel() == null ||
+        if (childrenModel == null || childrenModel.getChildrenDataModel() == null ||
                 childrenModel.getChildrenDataModel().getPreviewModel() == null ||
                 childrenModel.getChildrenDataModel().getPreviewModel().getImageList() == null ||
                 childrenModel.getChildrenDataModel().getPreviewModel().getImageList().isEmpty()
-           )
+        )
             return;
 
-        for(ImageDataModel imageDataModel : childrenModel.getChildrenDataModel().getPreviewModel().getImageList()){
-            if(imageDataModel.getSourceModel() == null ||
+        for (ImageDataModel imageDataModel : childrenModel.getChildrenDataModel().getPreviewModel().getImageList()) {
+            if (imageDataModel.getSourceModel() == null ||
                     imageDataModel.getSourceModel().getImageUrl() == null ||
                     imageDataModel.getSourceModel().getImageUrl().isEmpty() || context == null)
                 continue;
@@ -58,7 +58,7 @@ public class ReddItAdapter extends RecyclerView.Adapter<ReddItAdapter.ViewHolder
             So, I'm showing resolution last image.
             String imageUrl = imageDataModel.getSourceModel().getImageUrl(); */
 
-            String imageUrl = imageDataModel.getResolutionList().get(resolutionListSize-1).getImageUrl();
+            String imageUrl = imageDataModel.getResolutionList().get(resolutionListSize - 1).getImageUrl();
             String replaced = imageUrl.replace("&amp;", "&");
 
             holder.imageView.setOnClickListener(view -> {
@@ -92,7 +92,7 @@ public class ReddItAdapter extends RecyclerView.Adapter<ReddItAdapter.ViewHolder
     static class ViewHolder extends RecyclerView.ViewHolder {
         ReddItImageNetworkImageView imageView;
 
-         ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             this.imageView = itemView.findViewById(R.id.image_view);
         }

@@ -6,8 +6,8 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.greedygame.R
-import com.example.greedygame.imageloader.NetworkImageView
-import com.example.greedygame.imageloader.ReddItImageNetworkImageView
+import com.example.imageloaderlib.imageloader.NetworkImageView
+import com.example.imageloaderlib.imageloader.ReddItImageNetworkImageView
 
 class ImagePreviewMode : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.greedygame.imageloader;
+package com.example.imageloaderlib.imageloader;
 
 import android.annotation.TargetApi;
 import android.content.Context;

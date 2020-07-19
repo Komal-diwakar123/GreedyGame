@@ -1,4 +1,4 @@
-package com.example.greedygame.imageloader;
+package com.example.imageloaderlib.imageloader;
 
 import android.content.Context;
 import android.text.TextUtils;

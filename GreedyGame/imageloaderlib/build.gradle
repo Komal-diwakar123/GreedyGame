@@ -1,16 +1,9 @@
-plugins {
-    id 'java-library'
-    id 'kotlin'
-}
+apply plugin: 'com.android.library'
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+android {
+    compileSdkVersion 29
 }
-
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
     //Volley
     api 'com.android.volley:volley:1.1.1'
     api "androidx.appcompat:appcompat:1.1.0"

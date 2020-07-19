@@ -13,6 +13,7 @@ class ReddItRepo(private val context: Context){
 
     private var reddItRestApi: ReddItRestAPI = APIRetrofitService.createApiService()
     val responseLiveData = MutableLiveData<ResponseModel>()
+    val errorResponseLiveData = MutableLiveData<String>()
     val TAG = "ReddItRepo"
 
     fun getReddItResponse(){
@@ -27,6 +28,7 @@ class ReddItRepo(private val context: Context){
             }
 
             override fun onFailure(call: Call<ResponseModel>, error: Throwable?) {
+                errorResponseLiveData.postValue(error?.message)
                 Toast.makeText(context, error?.message, Toast.LENGTH_SHORT).show()
             }
         })
