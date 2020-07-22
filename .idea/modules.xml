@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/GreedyGame.iml" filepath="$PROJECT_DIR$/.idea/modules/GreedyGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GreedyGame.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GreedyGame.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imageloaderlib/GreedyGame.imageloaderlib.iml" filepath="$PROJECT_DIR$/.idea/modules/imageloaderlib/GreedyGame.imageloaderlib.iml" />
     </modules>
   </component>
 </project>
